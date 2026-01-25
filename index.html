@@ -14,13 +14,21 @@
 <body>
 
     <div class="controls no-print">
-        <div class="left-controls">
-            <h1>KidMath</h1>
-            <div class="button-group">
-                <button id="btnAdd" class="active">Addition</button>
-                <button id="btnSub">Subtraction</button>
-                <button id="btnMix">Mixed</button>
+        <div class="main-row">
+            <div class="left-group">
+                <h1>KidMath</h1>
+                <div class="button-group">
+                    <button id="btnAdd" class="active">Addition</button>
+                    <button id="btnSub">Subtraction</button>
+                    <button id="btnMix">Mixed</button>
+                </div>
             </div>
+            <div class="right-group">
+                <button id="btnPrint" class="secondary">Print</button>
+            </div>
+        </div>
+
+        <div class="second-row">
             <div class="select-group">
                 <label for="secondDigits">2nd Num:</label>
                 <select id="secondDigits">
@@ -36,9 +44,6 @@
             <button id="btnRandomize" class="primary">
                 <span class="icon">↻</span> Randomize
             </button>
-        </div>
-        <div class="right-controls">
-            <button id="btnPrint" class="secondary">Print</button>
         </div>
     </div>
 

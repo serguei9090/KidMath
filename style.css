@@ -25,19 +25,32 @@ body {
 /* Controls */
 .controls {
     background: white;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 1.5rem;
     margin: 1.5rem 0;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     width: 95%;
     max-width: 1000px;
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-row,
+.second-row {
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
-.left-controls {
+.second-row {
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.left-group {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -67,10 +80,6 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: #f8f8f8;
-    padding: 0.3rem 0.8rem;
-    border-radius: 8px;
-    border: 1px solid #eee;
 }
 
 .select-group label {
@@ -83,16 +92,24 @@ body {
 .select-group select,
 .select-group input {
     font-family: var(--font-family);
-    border: none;
-    background: transparent;
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 0.4rem 0.6rem;
     font-size: 0.9rem;
     cursor: pointer;
     font-weight: 500;
     outline: none;
+    transition: all 0.2s ease;
+}
+
+.select-group select:hover,
+.select-group input:hover {
+    border-color: #999;
 }
 
 .select-group input {
-    width: 3rem;
+    width: 4rem;
 }
 
 button {
