@@ -4,13 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnMix = document.getElementById('btnMix');
     const btnRandomize = document.getElementById('btnRandomize');
     const btnPrint = document.getElementById('btnPrint');
+    const secondDigitsSelect = document.getElementById('secondDigits'); // New dropdown
     const worksheetContainer = document.getElementById('worksheet');
 
     let currentMode = 'add'; // 'add', 'sub', 'mix'
-
-    // Configuration for random numbers
-    const MAX_SUM = 100; // Limits addition problems to sum <= 100
-    const MIN_NUM = 1;
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -24,15 +21,27 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedMode = Math.random() > 0.5 ? 'add' : 'sub';
         }
 
+        // Rule: First number always 2 digits (10-99)
+        num1 = getRandomInt(10, 99);
+
+        // Rule: Second number based on dropdown
+        const secondOption = secondDigitsSelect.value;
+        let min2, max2;
+
+        if (secondOption === 'one') {
+            min2 = 1; max2 = 9;
+        } else if (secondOption === 'two') {
+            min2 = 10; max2 = 99;
+        } else {
+            min2 = 1; max2 = 99;
+        }
+
         if (selectedMode === 'add') {
-            // Ensure sum <= MAX_SUM
-            num1 = getRandomInt(MIN_NUM, MAX_SUM - MIN_NUM);
-            num2 = getRandomInt(MIN_NUM, MAX_SUM - num1);
+            num2 = getRandomInt(min2, Math.min(max2, 99));
             sign = '+';
         } else {
             // Subtraction: Ensure non-negative result
-            num1 = getRandomInt(MIN_NUM, MAX_SUM);
-            num2 = getRandomInt(MIN_NUM, num1);
+            num2 = getRandomInt(min2, Math.min(max2, num1));
             sign = '-';
         }
 
@@ -68,13 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
     btnAdd.addEventListener('click', () => setMode('add'));
     btnSub.addEventListener('click', () => setMode('sub'));
     btnMix.addEventListener('click', () => setMode('mix'));
+    secondDigitsSelect.addEventListener('change', () => renderWorksheet());
 
     btnRandomize.addEventListener('click', () => {
         renderWorksheet();
     });
 
     btnPrint.addEventListener('click', () => {
-        window.print();
+        globalThis.print();
     });
 
     // Initial render

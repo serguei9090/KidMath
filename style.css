@@ -63,6 +63,33 @@ body {
     display: inline-block;
 }
 
+.select-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f8f8f8;
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.select-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666;
+    white-space: nowrap;
+}
+
+.select-group select {
+    font-family: var(--font-family);
+    border: none;
+    background: transparent;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+}
+
 button {
     font-family: var(--font-family);
     font-size: 1rem;
