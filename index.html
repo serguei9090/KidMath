@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="controls no-print">
-        <h1>Worksheet Generator</h1>
-        <div class="button-group">
-            <button id="btnAdd" class="active">Addition</button>
-            <button id="btnSub">Subtraction</button>
-            <button id="btnMix">Mixed</button>
+        <div class="left-controls">
+            <h1>KidMath</h1>
+            <div class="button-group">
+                <button id="btnAdd" class="active">Addition</button>
+                <button id="btnSub">Subtraction</button>
+                <button id="btnMix">Mixed</button>
+            </div>
+            <button id="btnRandomize" class="primary">
+                <span class="icon">↻</span> Randomize
+            </button>
         </div>
-        <div class="action-group">
-            <button id="btnRandomize" class="primary">Randomize</button>
+        <div class="right-controls">
             <button id="btnPrint" class="secondary">Print</button>
         </div>
     </div>
@@ -64,4 +70,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
