@@ -1,17 +1,16 @@
+const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 document.addEventListener('DOMContentLoaded', () => {
     const btnAdd = document.getElementById('btnAdd');
     const btnSub = document.getElementById('btnSub');
     const btnMix = document.getElementById('btnMix');
     const btnRandomize = document.getElementById('btnRandomize');
     const btnPrint = document.getElementById('btnPrint');
-    const secondDigitsSelect = document.getElementById('secondDigits'); // New dropdown
-    const worksheetContainer = document.getElementById('worksheet');
+    const secondDigitsSelect = document.getElementById('secondDigits');
+    const pageCountInput = document.getElementById('pageCount');
+    const pagesContainer = document.getElementById('pages-container');
 
     let currentMode = 'add'; // 'add', 'sub', 'mix'
-
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
 
     function generateProblem(mode) {
         let num1, num2, sign;
@@ -48,28 +47,55 @@ document.addEventListener('DOMContentLoaded', () => {
         return { num1, num2, sign };
     }
 
-    function renderWorksheet() {
-        // We have 4 panels in the HTML. Let's regenerate their content.
-        const panels = worksheetContainer.querySelectorAll('.panel');
+    function createPage() {
+        const pageContainer = document.createElement('div');
+        pageContainer.className = 'page-container';
 
-        panels.forEach((panel, index) => {
+        const grid = document.createElement('div');
+        grid.className = 'worksheet-grid';
+
+        for (let i = 0; i < 4; i++) {
             const problemData = generateProblem(currentMode);
-            const problemDiv = panel.querySelector('.problem');
+            const panel = document.createElement('div');
+            panel.className = 'panel';
 
-            // Format: "24 + 32 = __"
+            const problemDiv = document.createElement('div');
+            problemDiv.className = 'problem';
             problemDiv.textContent = `${problemData.num1} ${problemData.sign} ${problemData.num2} = __`;
-        });
+
+            const numberLine = document.createElement('div');
+            numberLine.className = 'number-line';
+            numberLine.innerHTML = `
+                <div class="arrow-left"></div>
+                <div class="line"></div>
+                <div class="arrow-right"></div>
+            `;
+
+            panel.appendChild(problemDiv);
+            panel.appendChild(numberLine);
+            grid.appendChild(panel);
+        }
+
+        pageContainer.appendChild(grid);
+        return pageContainer;
+    }
+
+    function renderWorksheet() {
+        pagesContainer.innerHTML = '';
+        const count = Number.parseInt(pageCountInput.value, 10) || 1;
+        const safeCount = Math.min(Math.max(count, 1), 50);
+
+        for (let i = 0; i < safeCount; i++) {
+            pagesContainer.appendChild(createPage());
+        }
     }
 
     function setMode(mode) {
         currentMode = mode;
-
-        // Update UI state
         [btnAdd, btnSub, btnMix].forEach(btn => btn.classList.remove('active'));
         if (mode === 'add') btnAdd.classList.add('active');
         if (mode === 'sub') btnSub.classList.add('active');
         if (mode === 'mix') btnMix.classList.add('active');
-
         renderWorksheet();
     }
 
@@ -78,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnSub.addEventListener('click', () => setMode('sub'));
     btnMix.addEventListener('click', () => setMode('mix'));
     secondDigitsSelect.addEventListener('change', () => renderWorksheet());
+    pageCountInput.addEventListener('change', () => renderWorksheet());
 
     btnRandomize.addEventListener('click', () => {
         renderWorksheet();

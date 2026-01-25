@@ -80,7 +80,8 @@ body {
     white-space: nowrap;
 }
 
-.select-group select {
+.select-group select,
+.select-group input {
     font-family: var(--font-family);
     border: none;
     background: transparent;
@@ -88,6 +89,10 @@ body {
     cursor: pointer;
     font-weight: 500;
     outline: none;
+}
+
+.select-group input {
+    width: 3rem;
 }
 
 button {
@@ -227,6 +232,8 @@ button.secondary {
         margin: 0 !important;
         padding: 0.5in !important;
         /* Manual margin to protect content from printer edges */
+        break-after: page;
+        /* Ensure each set starts on a new page */
     }
 
     .worksheet-grid {
