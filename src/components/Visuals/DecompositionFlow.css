@@ -1,0 +1,64 @@
+.decomposition-flow {
+    width: 100%;
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.decomp-problem-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.decomp-note {
+    font-style: italic;
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.decomp-row {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.decomp-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1.5px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: #fff;
+    position: relative;
+}
+
+/* Connectors */
+.decomp-row-1 .decomp-circle::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 1px;
+    height: 15px;
+    background: #999;
+}
+
+.decomp-row-2 .decomp-circle::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 1px;
+    height: 15px;
+    background: #999;
+}

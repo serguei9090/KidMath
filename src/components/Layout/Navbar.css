@@ -1,0 +1,28 @@
+.top-nav {
+    height: var(--nav-height);
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 10;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.icon {
+    margin-right: 6px;
+    font-size: 1.2rem;
+    display: inline-block;
+}

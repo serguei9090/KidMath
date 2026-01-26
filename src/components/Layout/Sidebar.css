@@ -1,0 +1,70 @@
+.sidebar {
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.control-section h3 {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 0.5px;
+}
+
+.button-group.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.button-group.vertical button {
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.input-group select,
+.input-group input {
+    font-family: var(--font-family);
+    padding: 0.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.toggle-group,
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.toggle-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--primary-color);
+    width: 1.1rem;
+    height: 1.1rem;
+}

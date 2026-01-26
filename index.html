@@ -1,59 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Free printable math worksheet generator for kids. Create addition, subtraction, and mixed problem sheets with number lines.">
-    <title>Math Worksheet Generator</title>
+        content="Free printable math worksheet generator for kids. Create addition, subtraction, and mixed problem sheets with number lines and decomposition visualizations." />
+    <title>KidMath - Math Worksheet Generator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
-    <div class="controls no-print">
-        <div class="main-row">
-            <div class="left-group">
-                <h1>KidMath</h1>
-                <div class="button-group">
-                    <button id="btnAdd" class="active">Addition</button>
-                    <button id="btnSub">Subtraction</button>
-                    <button id="btnMix">Mixed</button>
-                </div>
-            </div>
-            <div class="right-group">
-                <button id="btnPrint" class="secondary">Print</button>
-            </div>
-        </div>
-
-        <div class="second-row">
-            <div class="select-group">
-                <label for="secondDigits">2nd Num:</label>
-                <select id="secondDigits">
-                    <option value="one">Single Digit (1-9)</option>
-                    <option value="two">Double Digit (10-99)</option>
-                    <option value="mixed" selected>Mixed (1-99)</option>
-                </select>
-            </div>
-            <div class="select-group">
-                <label for="pageCount">Pages:</label>
-                <input type="number" id="pageCount" value="1" min="1" max="50">
-            </div>
-            <button id="btnRandomize" class="primary">
-                <span class="icon">↻</span> Randomize
-            </button>
-        </div>
-    </div>
-
-    <div id="pages-container">
-        <!-- Pages will be injected here -->
-    </div>
-
-    <script src="js/script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
