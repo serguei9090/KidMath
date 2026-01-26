@@ -42,8 +42,10 @@ function App() {
         noNegatives,
     };
 
+    const isDebug = import.meta.env.VITE_DEBUG_PRINT === 'true';
+
     return (
-        <div className="app">
+        <div className={`app ${isDebug ? 'debug-print' : ''}`}>
             <Navbar onRandomize={handleRandomize} onPrint={handlePrint} />
 
             <div className="app-container">

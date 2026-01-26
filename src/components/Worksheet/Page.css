@@ -24,7 +24,7 @@
     justify-content: center;
     position: relative;
     flex: 1;
-    margin-bottom: 10mm;
+    margin-bottom: 5mm;
 }
 
 .panel:last-child {
@@ -52,9 +52,15 @@
     .page-container {
         box-shadow: none;
         margin: 0 !important;
-        padding: 0.5in !important;
+        padding: 0.4in !important;
+        /* Slightly smaller padding for safety */
         width: 100% !important;
-        height: auto !important;
+        height: 11in !important;
+        /* Force exact Letter height */
+        max-height: 11in !important;
+        min-height: 11in !important;
+        overflow: hidden !important;
+        /* Clip any tiny overflow */
         break-after: page;
     }
 
