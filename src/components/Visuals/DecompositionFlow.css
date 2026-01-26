@@ -43,22 +43,65 @@
 }
 
 /* Connectors */
-.decomp-row-1 .decomp-circle::after {
+/* Connectors */
+
+/* Row 1 -> Row 2 Connections */
+/* Left pair (1,2) -> Left Lower (1) */
+.decomp-row-1 .decomp-circle:nth-child(1)::after,
+.decomp-row-1 .decomp-circle:nth-child(2)::after {
     content: '';
     position: absolute;
     top: 100%;
-    left: 50%;
     width: 1px;
-    height: 15px;
-    background: #999;
+    height: 20px;
+    background: #000;
 }
 
+/* Right pair (3,4) -> Right Lower (2) */
+.decomp-row-1 .decomp-circle:nth-child(3)::after,
+.decomp-row-1 .decomp-circle:nth-child(4)::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 1px;
+    height: 20px;
+    background: #000;
+}
+
+/* Angles */
+.decomp-row-1 .decomp-circle:nth-child(1)::after,
+.decomp-row-1 .decomp-circle:nth-child(3)::after {
+    left: 50%;
+    transform: skewX(-20deg) translateX(5px);
+    transform-origin: top center;
+}
+
+.decomp-row-1 .decomp-circle:nth-child(2)::after,
+.decomp-row-1 .decomp-circle:nth-child(4)::after {
+    right: 50%;
+    transform: skewX(20deg) translateX(-5px);
+    transform-origin: top center;
+}
+
+
+/* Row 2 -> Row 3 Connections */
 .decomp-row-2 .decomp-circle::after {
     content: '';
     position: absolute;
     top: 100%;
-    left: 50%;
     width: 1px;
-    height: 15px;
-    background: #999;
+    height: 20px;
+    background: #000;
+}
+
+.decomp-row-2 .decomp-circle:nth-child(1)::after {
+    left: 50%;
+    transform: skewX(-20deg) translateX(5px);
+    transform-origin: top center;
+}
+
+.decomp-row-2 .decomp-circle:nth-child(2)::after {
+    right: 50%;
+    transform: skewX(20deg) translateX(-5px);
+    transform-origin: top center;
 }

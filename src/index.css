@@ -25,6 +25,11 @@ body {
 
 /* Print Styling */
 @media print {
+    @page {
+        size: letter portrait;
+        margin: 0 !important;
+    }
+
     body {
         background: white;
         margin: 0;

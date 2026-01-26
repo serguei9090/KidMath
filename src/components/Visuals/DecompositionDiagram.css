@@ -1,0 +1,41 @@
+.decomposition-diagram {
+    width: 100%;
+    max-width: 500px;
+    height: 220px;
+    /* Reduced to fit more content on page */
+    margin: 0.2rem auto;
+    pointer-events: none;
+    display: block;
+}
+
+/* Custom Node Styling */
+.react-flow__node.bubble-node {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0;
+}
+
+/* Edge Styling */
+.react-flow__edge-path {
+    stroke: #000;
+    stroke-width: 1.5;
+}
+
+/* Hide handles */
+.react-flow__handle {
+    opacity: 0;
+}
+
+/* Print Overrides */
+@media print {
+    .decomposition-diagram {
+        break-inside: avoid;
+    }
+}
