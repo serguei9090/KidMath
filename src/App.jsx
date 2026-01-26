@@ -18,7 +18,7 @@ function App() {
     }, []);
 
     const handlePrint = useCallback(() => {
-        window.print();
+        globalThis.print();
     }, []);
 
     const toggleVisual = (visual) => {
