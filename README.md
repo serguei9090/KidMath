@@ -1,4 +1,9 @@
 # KidMath - Worksheet Generator
+## This is a personal learning project created for educational purposes and to explore different code concepts with ai concepts. 
+
+* **Status:** Personal sandbox / Portfolio piece.
+* **License:** This project is open-source and available for public educational use under the MIT License.
+* **Purpose:** Academic research and technical skill development.
 
 KidMath is a clean, minimalist web application designed to generate printable math worksheets for children. It focuses on high-contrast black and white aesthetics, making it perfect for printing on standard paper.
 
